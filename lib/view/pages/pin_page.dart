@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_banking_ui/router/router.dart';
 import 'package:flutter_banking_ui/utils/get_pain.dart';
+import 'package:flutter_banking_ui/view/pages/home_page.dart';
 import 'package:flutter_banking_ui/view/widgets/custom_scaffold.dart';
 import 'package:flutter_banking_ui/view/widgets/custom_text.dart';
 
@@ -8,7 +10,8 @@ class PinPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomScaffold(
+    return CustomScaffoldWithBottomBar(
+      isBottomNavVisible: false,
       body: CustomPaint(
         painter: StatiSmallBallsPainter(),
         child: Column(
@@ -36,8 +39,15 @@ class PinPage extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      _signInButtonBuilder("assets/faceID.png", 'Face ID', () {}),
-                      _signInButtonBuilder("assets/pin.png", 'PIN', () {}),
+                      _signInButtonBuilder(
+                          "assets/faceID.png", 'Face ID', () {}),
+                      _signInButtonBuilder("assets/pin.png", 'PIN', () {
+                        Navigator.of(context).push(
+                          MyCustomRouteTransition(
+                            route: const HomePage(),
+                          ),
+                        );
+                      }),
                       _signInButtonBuilder("assets/arrow.png", 'Other', () {}),
                     ],
                   ),
@@ -68,12 +78,10 @@ class PinPage extends StatelessWidget {
 class StaticBallPainter extends CustomPainter {
   final Offset offset;
   final double radius;
-  StaticBallPainter( this.offset, this.radius);
+  StaticBallPainter(this.offset, this.radius);
 
   @override
   void paint(Canvas canvas, Size size) {
-    
-
     canvas.drawCircle(
       offset,
       radius,
@@ -86,15 +94,16 @@ class StaticBallPainter extends CustomPainter {
     return true;
   }
 }
+
 class StatiSmallBallsPainter extends CustomPainter {
   StatiSmallBallsPainter();
 
   @override
   void paint(Canvas canvas, Size size) {
     canvas.drawCircle(
-      Offset(size.width+10, size.height * 0.15),
+      Offset(size.width + 10, size.height * 0.15),
       28,
-      getPaintForCircle(Offset(size.width+10, size.height * 0.15), 28),
+      getPaintForCircle(Offset(size.width + 10, size.height * 0.15), 28),
     );
     canvas.drawCircle(
       Offset(size.width, size.height * 0.43),
@@ -102,8 +111,6 @@ class StatiSmallBallsPainter extends CustomPainter {
       getPaintForCircle(Offset(size.width, size.height * 0.43), 28),
     );
   }
-
-  
 
   @override
   bool shouldRepaint(covariant CustomPainter oldDelegate) {

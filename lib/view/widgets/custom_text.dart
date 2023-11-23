@@ -7,11 +7,12 @@ class CustomText extends StatelessWidget {
   final FontWeight fontWeight;
   final TextAlign align;
   final double? textHeight;
+  final double? letterSpacing;
   const CustomText(this.text,
       {this.color = Colors.white,
       this.fontSize = 12,
       this.fontWeight = FontWeight.normal,
-      this.align = TextAlign.left, this.textHeight,
+      this.align = TextAlign.left, this.textHeight, this.letterSpacing,
       super.key});
 
   @override
@@ -23,7 +24,8 @@ class CustomText extends StatelessWidget {
         fontSize: fontSize,
         fontWeight: fontWeight,
         color: color,
-        height: textHeight
+        height: textHeight,
+        letterSpacing: letterSpacing,
       ),
     );
   }

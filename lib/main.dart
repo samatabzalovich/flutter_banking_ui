@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_banking_ui/view/pages/home_page.dart';
 import 'package:flutter_banking_ui/view/pages/pin_page.dart';
 import 'package:flutter_banking_ui/view/pages/test_page.dart';
 
