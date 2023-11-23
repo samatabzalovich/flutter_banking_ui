@@ -1,16 +1,11 @@
 # flutter_banking_ui
 
-A new Flutter project.
+Bank UI with animation using  canvas and custom painter
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<code>flutter pub get</code>
+<code>flutter run</code>
+You can check prototype on figma:
+## Link 
+[a link](https://www.figma.com/proto/SqD7c3Z9NmpxIVHulOZC64/Bank-App-Template-(Community)?type=design&node-id=1-79&t=Tm9Ndn0wcGXsYJTE-1&scaling=scale-down&page-id=0%3A1&mode=design)
